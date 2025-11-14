@@ -1,3 +1,9 @@
+import Partner from "./Partner";
+
 export default function Home() {
-  return <section></section>;
+  return (
+    <main>
+      <Partner />
+    </main>
+  );
 }
