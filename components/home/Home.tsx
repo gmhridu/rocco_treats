@@ -1,4 +1,5 @@
 import AboutRoccoTreats from "./AboutRoccoTreats";
+import Ingredients from "./Ingredients";
 import Partner from "./Partner";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <main>
       <Partner />
       <AboutRoccoTreats />
+      <Ingredients />
     </main>
   );
 }

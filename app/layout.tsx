@@ -19,9 +19,13 @@ export default function RootLayout({
       data-arp=""
       className={`${heritageSans.variable} ${nunito.variable} antialiased`}
     >
-      <body className={nunito.className} cz-shortcut-listen="true">
+      <body className={`${nunito.className} bg-transparent relative`} cz-shortcut-listen="true">
+        <div className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+             style={{ backgroundImage: "url('/assests/parallax.png')" }} />
         <Navbar />
-        {children}
+        <main className="relative z-0">
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -119,8 +119,26 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html, body {
+    @apply bg-transparent;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+  }
+
+  /* Ensure parallax background is visible */
+  [data-parallax-background] {
+    z-index: -10 !important;
+  }
+
+  /* Custom rule to ensure lowercase text in heritage font */
+  .font-heritage-lowercase {
+    text-transform: lowercase !important;
+  }
+
+  /* Custom rule to ensure uppercase text in heritage font */
+  .font-heritage-uppercase {
+    text-transform: uppercase !important;
   }
 
   .container-content {
