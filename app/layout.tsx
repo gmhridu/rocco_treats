@@ -24,10 +24,6 @@ export default function RootLayout({
         className={`${nunito.className} bg-transparent relative`}
         cz-shortcut-listen="true"
       >
-        <div
-          className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/assests/parallax.png')" }}
-        />
         <Navbar />
         <main className="relative z-0">{children}</main>
         <Footer />
