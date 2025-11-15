@@ -34,7 +34,10 @@ export default function Navbar() {
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
         setDropdownOpen(false);
       }
     };
@@ -69,9 +72,14 @@ export default function Navbar() {
               <NavLink href="/">Home</NavLink>
 
               {/* Desktop Dropdown */}
-              <div className="relative" ref={dropdownRef}>
+              <div
+                className="relative"
+                ref={dropdownRef}
+                onMouseEnter={() => setDropdownOpen(true)}
+                onMouseLeave={() => setDropdownOpen(false)}
+              >
                 <button
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  onClick={() => setDropdownOpen((prev) => !prev)}
                   className={cn(
                     "flex items-center gap-1 font-heritage font-bold text-lg text-[#C4797A] hover:text-[#a76b69] transition-colors",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C4797A] rounded-md px-1"
@@ -96,7 +104,11 @@ export default function Navbar() {
                     "opacity-0 invisible transition-all duration-200",
                     dropdownOpen && "opacity-100 visible"
                   )}
-                  style={{ transform: dropdownOpen ? "translateY(0)" : "translateY(-8px)" }}
+                  style={{
+                    transform: dropdownOpen
+                      ? "translateY(0)"
+                      : "translateY(-8px)",
+                  }}
                 >
                   {ingredients.map((item) => (
                     <li key={item.path}>
@@ -122,7 +134,11 @@ export default function Navbar() {
               className="lg:hidden p-2 rounded-md text-[#C4797A] hover:bg-[#f5e4e3] transition-colors"
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+              {mobileOpen ? (
+                <X className="size-6" />
+              ) : (
+                <Menu className="size-6" />
+              )}
             </button>
           </div>
         </div>
@@ -150,13 +166,18 @@ export default function Navbar() {
               >
                 Ingredients
                 <ChevronDown
-                  className={cn("size-5 transition-transform", dropdownOpen && "rotate-180")}
+                  className={cn(
+                    "size-5 transition-transform",
+                    dropdownOpen && "rotate-180"
+                  )}
                 />
               </button>
               <div
                 className={cn(
                   "grid overflow-hidden transition-all duration-300",
-                  dropdownOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  dropdownOpen
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
                 )}
               >
                 <div className="min-h-0">
@@ -177,10 +198,16 @@ export default function Navbar() {
               </div>
             </div>
 
-            <MobileNavLink href="/our-story" onClick={() => setMobileOpen(false)}>
+            <MobileNavLink
+              href="/our-story"
+              onClick={() => setMobileOpen(false)}
+            >
               Our Story
             </MobileNavLink>
-            <MobileNavLink href="/contact-us" onClick={() => setMobileOpen(false)}>
+            <MobileNavLink
+              href="/contact-us"
+              onClick={() => setMobileOpen(false)}
+            >
               Contact Us
             </MobileNavLink>
           </div>
@@ -199,7 +226,13 @@ export default function Navbar() {
 }
 
 /* Reusable NavLink Components */
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
   return (
     <Link
       href={href}

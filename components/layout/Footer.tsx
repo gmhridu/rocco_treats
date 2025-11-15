@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
 
 const ingredients = [
   { path: "/turkey", name: "Turkey" },
@@ -56,19 +55,40 @@ const Footer = () => {
 
               {/* Dropdown */}
               <li className="relative group cursor-pointer w-max mx-auto md:mx-0">
+
+                {/* Trigger */}
                 <div className="flex items-center gap-1 hover:text-white transition">
                   <span>INGREDIENTS</span>
-                  <ChevronDown size={16} />
+                  <ChevronDown
+                    size={16}
+                    className="transition-transform duration-300 group-hover:rotate-180"
+                  />
                 </div>
 
                 {/* Dropdown panel */}
-                <div className="absolute left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 mt-2 w-48 bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                  <ul className="p-4 space-y-3 text-[#d14727] text-sm border-t-4 border-[#d14727]">
-                    {ingredients.map((item, index) => (
-                      <li key={index}>
+                <div
+                  className="
+                    absolute left-1/2 md:left-0
+                    -translate-x-1/2 md:translate-x-0
+                    mt-2 w-48 bg-white shadow-lg rounded-md
+                    border-t-4 border-[#d14727]
+                    opacity-0 invisible
+                    group-hover:opacity-100 group-hover:visible
+                    transition-all duration-300
+                    translate-y-[-10px] group-hover:translate-y-0
+                  "
+                >
+                  <ul className="p-4 space-y-3 text-[#d14727] text-sm">
+                    {ingredients.map((item) => (
+                      <li key={item.path}>
                         <Link
                           href={item.path}
-                          className="block hover:text-black hover:translate-x-1 transition-all duration-200"
+                          className="
+                            block
+                            hover:text-black
+                            transition-all duration-200
+                            hover:translate-x-1
+                          "
                         >
                           {item.name}
                         </Link>
@@ -76,6 +96,7 @@ const Footer = () => {
                     ))}
                   </ul>
                 </div>
+
               </li>
 
               <li>
@@ -116,7 +137,7 @@ const Footer = () => {
         </div>
 
         {/* BOTTOM COPYRIGHT */}
-        <div className="border-t border-white/20 mt-10 pt-6 text-white text-sm">
+        <div className="border-t border-white/20 mt-10 pt-6 text-white text-sm text-center md:text-left">
           © {year} • Rocco Treats
         </div>
       </div>
