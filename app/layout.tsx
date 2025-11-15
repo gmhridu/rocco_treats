@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { heritageSans, nunito } from "./font";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Recco Treats",
@@ -19,13 +20,17 @@ export default function RootLayout({
       data-arp=""
       className={`${heritageSans.variable} ${nunito.variable} antialiased`}
     >
-      <body className={`${nunito.className} bg-transparent relative`} cz-shortcut-listen="true">
-        <div className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-             style={{ backgroundImage: "url('/assests/parallax.png')" }} />
+      <body
+        className={`${nunito.className} bg-transparent relative`}
+        cz-shortcut-listen="true"
+      >
+        <div
+          className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/assests/parallax.png')" }}
+        />
         <Navbar />
-        <main className="relative z-0">
-          {children}
-        </main>
+        <main className="relative z-0">{children}</main>
+        <Footer />
       </body>
     </html>
   );

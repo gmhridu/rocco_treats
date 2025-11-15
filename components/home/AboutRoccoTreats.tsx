@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const AboutRoccoTreats = () => {
   return (
-    <section className="py-12 md:py-20 lg:py-28 overflow-hidden bg-[#C4797A]">
+    <section className="py-12 md:py-16 overflow-hidden bg-[#C4797A]">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* ==== Desktop / Tablet – side-by-side ==== */}
         <div className="hidden md:flex items-center justify-between gap-8 lg:gap-12">
@@ -15,8 +15,8 @@ const AboutRoccoTreats = () => {
               src="/assests/Untitled-1hshshhss.png"
               alt="Rocco Treats Logo"
               width={300}
-              height={400}
-              className="h-auto w-full max-w-[280px] lg:max-w-[300px] object-contain"
+              height={300}
+              className="h-auto w-full max-w-[200px] lg:max-w-[300px] object-contain"
               priority
             />
           </div>
@@ -53,13 +53,13 @@ const AboutRoccoTreats = () => {
         {/* ==== Mobile – stacked ==== */}
         <div className="md:hidden flex flex-col items-center text-center">
           {/* Logo – centered, responsive */}
-          <div className="mb-8 w-full max-w-[220px] sm:max-w-[300px]">
+          <div className="mb-8">
             <Image
               src="/assests/Untitled-1hshshhss.png"
               alt="Rocco Treats Logo"
-              width={360}
+              width={500}
               height={340}
-              className="h-auto w-full object-contain"
+              className=""
               priority
             />
           </div>

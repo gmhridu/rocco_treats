@@ -20,7 +20,7 @@ const reviews = [
   {
     name: "Katrina Z.",
     sub: "AWESOME TRAINING TREATS",
-    body: "Our dog loves the Turkey Breast Strips treats- when we use them for training, he is at his absolute best focus and performance when he knows these are the treats he’s getting.",
+    body: "Our dog loves the Turkey Breast Strips treats — when we use them for training, he is at his absolute best focus and performance when he knows these are the treats he’s getting.",
     rating: 5,
   },
   {
@@ -47,54 +47,54 @@ const Ingredients = () => {
 
   return (
     <>
-      <section className="py-16 md:py-24 lg:py-32 overflow-hidden bg-transparent">
+      {/* ==================== SECTION 1 ==================== */}
+      <section className="py-14 sm:py-16 md:py-20 lg:py-28 bg-transparent">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          {/* Real Ingredients Text */}
-          <div className="flex flex-col items-center justify-center">
+          {/* Headings */}
+          <div className="flex flex-col items-center text-center">
             <h1
-              className="text-3xl sm:text-4xl tracking-wider font-bold"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-wider"
               style={{
                 fontFamily: "'Dancing Script', cursive",
                 fontStyle: "italic",
                 fontWeight: 900,
                 color: "#c45d68",
-                transform: "skewX(-5deg)",
-                display: "inline-block",
                 textShadow: "1px 1px 2px rgba(0,0,0,0.1)",
-                lineHeight: "1.1",
-                letterSpacing: "1px",
               }}
             >
               real ingredients.
             </h1>
 
-            <h2 className="text-3xl sm:text-4xl font-bold lg:text-5xl font-heritage text-[#c45d68] mt-5">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heritage font-bold text-[#c45d68] mt-3 sm:mt-5">
               no fillers.
             </h2>
           </div>
 
-          <div className="mt-8 flex flex-col items-center justify-center">
-            <h5 className="text-2xl sm:text-[26px] font-semibold text-center text-[#333]">
+          {/* Text */}
+          <div className="mt-8 sm:mt-10 flex flex-col items-center text-center">
+            <h5 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#333]">
               100% made in South Africa
             </h5>
 
-            <p className="mt-5 text-[#333] text-lg font-semibold text-center max-w-3xl">
+            <p className="mt-4 sm:mt-6 text-[#333] text-base sm:text-lg md:text-xl font-semibold leading-relaxed max-w-3xl">
               Taking a regional, down-to-earth approach, we manufacture our
               products in the heart of Cape Town using high-quality raw
-              materials that we source from the local area wherever possible. We
-              subject our ingredients to in-depth quality checks and regularly
-              undertake laboratory tests.
+              materials sourced locally whenever possible. We conduct rigorous
+              ingredient checks and regular laboratory tests.
             </p>
-            <Button className="mt-10 text-lg bg-[#c45d68]" size="lg">
+
+            <Button className="mt-8 sm:mt-10 text-lg bg-[#c45d68] px-8 py-5 rounded-lg" size="lg">
               <Link href="/ingredients">Learn More</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-transparent">
-        <div className="max-w-[1350px] mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* ==================== SECTION 2 ==================== */}
+      <section className="py-14 sm:py-16 md:py-24 bg-transparent">
+        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
             {/* LEFT IMAGE */}
             <div className="flex justify-center">
               <Image
@@ -103,18 +103,19 @@ const Ingredients = () => {
                 width={900}
                 height={700}
                 priority
-                className="rounded-lg shadow-lg"
+                className="rounded-xl shadow-xl w-full max-w-[600px] object-cover"
               />
             </div>
 
             {/* RIGHT SLIDER */}
             <div className="relative w-full">
-              {/* ARROWS (left & right outside) */}
-              <div className="swiper-button-prev-custom absolute -left-12 top-1/2 -translate-y-1/2 text-red-600  w-16 h-16  flex items-center justify-center  cursor-pointer text-4xl">
+
+              {/* Swiper Custom Arrows (auto-adjust on screen size) */}
+              <div className="swiper-button-prev-custom absolute -left-4 sm:-left-10 top-1/2 -translate-y-1/2 text-[#c45d68] w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center text-3xl sm:text-4xl cursor-pointer select-none">
                 «
               </div>
 
-              <div className="swiper-button-next-custom absolute -right-12 top-1/2 -translate-y-1/2 text-red-600  w-16 h-16 flex items-center justify-center cursor-pointer text-4xl">
+              <div className="swiper-button-next-custom absolute -right-4 sm:-right-10 top-1/2 -translate-y-1/2 text-[#c45d68] w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center text-3xl sm:text-4xl cursor-pointer select-none">
                 »
               </div>
 
@@ -133,42 +134,42 @@ const Ingredients = () => {
                   nextEl: ".swiper-button-next-custom",
                   prevEl: ".swiper-button-prev-custom",
                 }}
-                allowTouchMove={false}
+                allowTouchMove={true}
                 className="w-full"
               >
                 {reviews.map((review, i) => (
                   <SwiperSlide key={i}>
-                    <div className="text-center px-6">
-                      {/* QUOTE ICON */}
-                      <div className="text-gray-400 text-6xl mb-2 leading-none">
+                    <div className="text-center px-4 sm:px-6 lg:px-8">
+                      {/* QUOTE */}
+                      <div className="text-gray-400 text-5xl sm:text-6xl mb-2 leading-none">
                         &ldquo;
                       </div>
 
                       {/* TITLE */}
-                      <h3 className="text-3xl md:text-4xl  text-gray-900 mb-4 tracking-wide">
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
                         {review.sub}
                       </h3>
 
                       {/* BODY */}
-                      <p className="text-gray-600  mx-auto text-base leading-relaxed mb-6">
+                      <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-6">
                         {review.body}
                       </p>
 
                       {/* STARS */}
                       <div className="flex justify-center mb-4">
                         {[...Array(review.rating)].map((_, idx) => (
-                          <span key={idx} className="text-yellow-400 text-2xl">
+                          <span key={idx} className="text-yellow-400 text-xl sm:text-2xl">
                             ★
                           </span>
                         ))}
                       </div>
 
-                      {/* NAME — HANDWRITTEN STYLE */}
+                      {/* NAME (handwritten font) */}
                       <p
                         className="text-gray-800 mt-2"
                         style={{
                           fontFamily: "'Dancing Script', cursive",
-                          fontSize: "1.8rem",
+                          fontSize: "1.7rem",
                           fontWeight: 700,
                         }}
                       >
@@ -178,6 +179,7 @@ const Ingredients = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
+
             </div>
           </div>
         </div>
