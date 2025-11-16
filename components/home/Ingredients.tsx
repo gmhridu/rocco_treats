@@ -58,14 +58,14 @@ const Ingredients = () => {
                 fontFamily: "'Dancing Script', cursive",
                 fontStyle: "italic",
                 fontWeight: 900,
-                color: "#c45d68",
+                color: "#C4797A",
                 textShadow: "1px 1px 2px rgba(0,0,0,0.1)",
               }}
             >
               real ingredients.
             </h1>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heritage font-bold text-[#c45d68] mt-3 sm:mt-5">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heritage font-bold text-[#C4797A] mt-3 sm:mt-5">
               no fillers.
             </h2>
           </div>
@@ -83,7 +83,10 @@ const Ingredients = () => {
               ingredient checks and regular laboratory tests.
             </p>
 
-            <Button className="mt-8 sm:mt-10 text-lg bg-[#c45d68] px-8 py-5 rounded-lg" size="lg">
+            <Button
+              className="mt-8 sm:mt-10 text-lg font-bold bg-[#C4797A] hover:bg-[#C4797A]/90 hover:shadow-lg transition-all duration-300 transform cursor-pointer text-white px-8 py-5 rounded-lg"
+              size="lg"
+            >
               <Link href="/ingredients">Learn More</Link>
             </Button>
           </div>
@@ -94,7 +97,6 @@ const Ingredients = () => {
       <section className="py-14 sm:py-16 md:py-24 bg-transparent">
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
             {/* LEFT IMAGE */}
             <div className="flex justify-center">
               <Image
@@ -109,7 +111,6 @@ const Ingredients = () => {
 
             {/* RIGHT SLIDER */}
             <div className="relative w-full">
-
               {/* Swiper Custom Arrows (auto-adjust on screen size) */}
               <div className="swiper-button-prev-custom absolute -left-4 sm:-left-10 top-1/2 -translate-y-1/2 text-[#c45d68] w-10 sm:w-12 h-10 sm:h-12 flex items-center justify-center text-3xl sm:text-4xl cursor-pointer select-none">
                 «
@@ -158,7 +159,10 @@ const Ingredients = () => {
                       {/* STARS */}
                       <div className="flex justify-center mb-4">
                         {[...Array(review.rating)].map((_, idx) => (
-                          <span key={idx} className="text-yellow-400 text-xl sm:text-2xl">
+                          <span
+                            key={idx}
+                            className="text-yellow-400 text-xl sm:text-2xl"
+                          >
                             ★
                           </span>
                         ))}
@@ -179,7 +183,6 @@ const Ingredients = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-
             </div>
           </div>
         </div>

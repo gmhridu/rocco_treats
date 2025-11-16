@@ -70,6 +70,39 @@
     text-transform: uppercase !important;
   }
 
+  /* Handwriting effect for product names */
+  .handwriting-effect {
+    font-style: italic;
+    transform: rotate(1deg) skew(-1deg);
+    letter-spacing: 0.05em;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+  }
+
+  /* Dancing text animation */
+  @keyframes dance {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-5px) rotate(-2deg);
+    }
+    50% {
+      transform: translateY(0) rotate(0deg);
+    }
+    75% {
+      transform: translateY(-3px) rotate(1deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+
+  .dancing-text {
+    animation: dance 2s ease-in-out infinite;
+    display: inline-block;
+  }
+
   .container-content {
     max-width: var(--content-width);
     margin-left: auto;

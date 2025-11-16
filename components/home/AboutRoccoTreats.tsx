@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const AboutRoccoTreats = () => {
   return (
@@ -39,13 +40,15 @@ const AboutRoccoTreats = () => {
               unique needs.
             </p>
 
-            <div className="mt-8 flex justify-start">
-              <Button
-                size="lg"
-                className="rounded-full bg-[#0C71C3] px-8 py-6 text-base lg:text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#0a5fa3] hover:shadow-xl"
-              >
-                Learn More
-              </Button>
+            <div className="mt-8 flex justify-center">
+              <Link href={"/contact-us"}>
+                <Button
+                  size="lg"
+                  className="rounded-full bg-[#0C71C3] px-8 py-6 text-base lg:text-lg font-semibold text-white shadow-lg transition-all hover:bg-[#0a5fa3] hover:shadow-xl cursor-pointer"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

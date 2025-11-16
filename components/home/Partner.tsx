@@ -2,18 +2,16 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Partner() {
   return (
     <section className="py-16 md:py-24 lg:py-32 overflow-hidden bg-linear-to-b from-white to-[#faf6f6]">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
         {/* Responsive Wrapper */}
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
-
           {/* LEFT: TEXT + BUBBLE */}
           <div className="relative flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-1/2">
-
             {/* Background Speech Bubble */}
             <div
               className="absolute inset-0 -z-10 scale-125 md:scale-110 lg:scale-100 opacity-30 md:opacity-40 lg:opacity-100"
@@ -39,16 +37,19 @@ export default function Partner() {
               </strong>{" "}
               Innovative, personalized, and tailored:{" "}
               <strong>Rocco Treats</strong> specializes in creating exclusive
-              private-label brands for <strong>super-premium Dog Treats</strong>.
+              private-label brands for <strong>super-premium Dog Treats</strong>
+              .
             </p>
 
             {/* CTA Button */}
-            <Button
-              size="lg"
-              className="mt-8 rounded-full bg-[#C4797A] px-8 py-6 text-base md:text-lg font-heritage font-semibold text-white shadow-lg transition-all hover:bg-[#a76b69] hover:shadow-xl"
-            >
-              See All Our Ingredients
-            </Button>
+            <Link href={"/ingredients"}>
+              <Button
+                size="lg"
+                className="mt-8 rounded-full bg-[#C4797A] px-8 py-6 text-base md:text-lg font-heritage font-semibold text-white shadow-lg transition-all hover:bg-[#a76b69] hover:shadow-xl"
+              >
+                See All Our Ingredients
+              </Button>
+            </Link>
           </div>
 
           {/* RIGHT: PRODUCT IMAGE */}
@@ -62,7 +63,6 @@ export default function Partner() {
               priority
             />
           </div>
-
         </div>
       </div>
     </section>
