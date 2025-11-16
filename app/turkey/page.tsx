@@ -11,7 +11,7 @@ export default function TurkeyPage() {
           alt="Background"
           fill
           className="object-cover object-center"
-          priority
+          priority={true}
         />
         {/* Optional overlay to improve text readability */}
         <div className="absolute inset-0 bg-white/70 md:bg-white/60"></div>
